@@ -19,6 +19,12 @@ def enforce_python_version():
 	if sys.version_info[0] != 2 or sys.version_info[1] != 7:
 		raise SystemExit('Please use Python version 2.7.')
 
+def eager():
+	tf.enable_eager_execution()
+	stuff = tf.random_normal([1000, 1000])
+	more = tf.reduce_sum(stuff)
+	print(more)
+
 def read_dataset():
 	df = pd.read_csv("datasets/Sonar.csv")
 	print(len(df.columns))

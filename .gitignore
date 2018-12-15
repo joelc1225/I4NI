@@ -1,5 +1,7 @@
 ### Misc ###
-graph/events.out*
+venv
+neural-networks/models
+neural-networks/graph/events.out*
 
 
 

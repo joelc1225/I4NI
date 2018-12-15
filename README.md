@@ -1,1 +1,3 @@
-Basically a scratch space for learning tensor flow.  See info.md for random notes/progress.  Hopefully will get some image recognition working and eventually a way to detect if people are experiencing face-droop (sign of a stroke).
+# I4NI
+
+Documentation, notes, and scratch work can be found in the [wiki](https://github.com/joelc1225/I4NI/wiki).
