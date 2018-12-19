@@ -1,0 +1,6 @@
+[submodule "data/tf-datasets"]
+	path = data/tf-datasets
+	url = ssh://git@github.com/tensorflow/datasets
+[submodule "data/ML-datasets"]
+	path = data/ML-datasets
+	url = git@github.com:selva86/datasets.git
