@@ -38,8 +38,8 @@ NUM_LAYERS = 6
 # LEARNING_RATE = 0.3
 LEARNING_RATE = 0.003
 # tf.enable_eager_execution()
-# models can easily blow up (i believe this causes the 'nan' and 'inf' values).  That's why i get numbers for TRAINING_EPOCHS <=3 and nan otherwise
-TRAINING_EPOCHS = 10
+# a SINGLE epoch is 1 iteration PER training input.  In our case, 166 iterations.  If you do TOO MANY epochs, you OVERFIT
+TRAINING_EPOCHS = 3
 
 
 def enforce_python_version():
@@ -160,7 +160,8 @@ def build_and_run_graph():
 	for epoch in range(TRAINING_EPOCHS):
 		session.run([error, thang])
 		# print('epoch: {} - error: {} - train accuracy: {}'.format(epoch, current_error, train_accuracy)) 
-		print('epoch: {} - error: {} - thang (train accuracy?): {}'.format(epoch, error, thang)) 
+		# print('epoch: {} - error: {}'.format(epoch, error)) 
+		print('thang: {}'.format(thang))
 	out = session.run([WEIGHTS, BIASES, error])
 
 	# access graph via tensorboard --logdir ./graph
@@ -170,7 +171,7 @@ def build_and_run_graph():
 	session.close()
 
 	# print results
-	print(out)
+	# print(out)
 
 def flow():
 	build_and_run_graph()
