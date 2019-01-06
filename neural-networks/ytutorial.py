@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Try to follow the tutorial more exactly
 
 import sys
 from os import path
@@ -156,8 +157,10 @@ def build_and_run_graph():
 	session.run(init)
 	# was 'model_path' in demo
 	# saver.restore(session, PATH['saved-session'])
-	for _ in range(TRAINING_EPOCHS):
-		session.run(thang)
+	for epoch in range(TRAINING_EPOCHS):
+		session.run([error, thang])
+		# print('epoch: {} - error: {} - train accuracy: {}'.format(epoch, current_error, train_accuracy)) 
+		print('epoch: {} - error: {} - thang (train accuracy?): {}'.format(epoch, error, thang)) 
 	out = session.run([WEIGHTS, BIASES, error])
 
 	# access graph via tensorboard --logdir ./graph
