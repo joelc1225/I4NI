@@ -4,3 +4,6 @@
 [submodule "data/ML-datasets"]
 	path = data/ML-datasets
 	url = git@github.com:selva86/datasets.git
+[submodule "data/tf-models"]
+	path = data/tf-models
+	url = git@github.com:tensorflow/models.git
